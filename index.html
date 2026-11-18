@@ -1,0 +1,429 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GRAPHICSss | Gaming Design</title>
+
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+:root {
+  --red: #ff3030;
+  --dark: #090909;
+}
+
+body {
+  background: var(--dark);
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 8%;
+  background: #101010;
+  border-bottom: 1px solid #292929;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 27px;
+  font-weight: 900;
+}
+
+.logo span {
+  color: var(--red);
+}
+
+nav {
+  display: flex;
+  gap: 25px;
+}
+
+nav a {
+  color: #ddd;
+  text-decoration: none;
+  font-size: 14px;
+  transition: .2s;
+}
+
+nav a:hover {
+  color: var(--red);
+}
+
+.hero {
+  min-height: 570px;
+  padding: 120px 8%;
+  display: flex;
+  align-items: center;
+  background:
+    radial-gradient(ellipse at 80% 50%, #531111, transparent 40%),
+    linear-gradient(120deg, #090909, #171010);
+}
+
+.hero-content {
+  max-width: 750px;
+}
+
+.tag {
+  color: var(--red);
+  letter-spacing: 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: clamp(45px, 8vw, 85px);
+  line-height: .98;
+  margin: 25px 0;
+  font-weight: 900;
+}
+
+h1 span {
+  color: var(--red);
+}
+
+.hero p {
+  color: #aaa;
+  line-height: 1.8;
+  max-width: 500px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 30px;
+  background: var(--red);
+  color: white;
+  padding: 15px 28px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: .2s;
+}
+
+.btn:hover {
+  background: #d90000;
+  transform: translateY(-3px);
+}
+
+section {
+  padding: 85px 8%;
+}
+
+.section-title {
+  font-size: 36px;
+  margin-bottom: 12px;
+}
+
+.section-title span {
+  color: var(--red);
+}
+
+.subtitle {
+  color: #888;
+  margin-bottom: 35px;
+}
+
+.portfolio {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 22px;
+}
+
+.project {
+  background: #171717;
+  border: 1px solid #292929;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: .3s;
+}
+
+.project:hover {
+  transform: translateY(-7px);
+  border-color: var(--red);
+}
+
+.art {
+  height: 170px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 27px;
+  font-weight: 900;
+  text-align: center;
+  background:
+    radial-gradient(circle at 70% 40%, #8c2020, transparent 40%),
+    linear-gradient(135deg, #161616, #310d0d);
+  padding: 15px;
+}
+
+.art.purple {
+  background: linear-gradient(135deg, #150e24, #652b79);
+}
+
+.art.blue {
+  background: linear-gradient(135deg, #081b2d, #155a80);
+}
+
+.project-info {
+  padding: 20px;
+}
+
+.project-info p {
+  color: #888;
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+.prices {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 20px;
+}
+
+.price-card {
+  background: #151515;
+  padding: 30px;
+  border: 1px solid #303030;
+  border-radius: 10px;
+  transition: .3s;
+}
+
+.price-card:hover {
+  border-color: var(--red);
+  transform: translateY(-5px);
+}
+
+.price-card h3 {
+  font-size: 20px;
+}
+
+.price {
+  color: var(--red);
+  font-size: 35px;
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+.price-card p {
+  color: #999;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.contact {
+  text-align: center;
+  background: linear-gradient(120deg, #170909, #090909);
+}
+
+.contact p {
+  color: #aaa;
+  margin-top: 15px;
+}
+
+.email {
+  display: block;
+  margin-top: 20px;
+  color: #ff5555;
+  text-decoration: none;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  color: #666;
+  background: #080808;
+  border-top: 1px solid #222;
+  font-size: 13px;
+}
+
+@media(max-width: 650px) {
+  header {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  nav {
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .hero {
+    padding: 90px 7%;
+  }
+
+  section {
+    padding: 65px 7%;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">GRAPHICS<span>ss.</span></div>
+
+  <nav>
+    <a href="#home">HOME</a>
+    <a href="#portfolio">PORTFOLIO</a>
+    <a href="#prices">CENNIK</a>
+    <a href="#contact">KONTAKT</a>
+  </nav>
+</header>
+
+<main>
+
+<div class="hero" id="home">
+  <div class="hero-content">
+    <div class="tag">GAMING GRAPHIC DESIGN</div>
+
+    <h1>
+      TWÓJ POMYSŁ.<br>
+      <span>NASZA GRAFIKA.</span>
+    </h1>
+
+    <p>
+      Tworzę wyjątkowe grafiki gamingowe.
+      Miniaturki YouTube, loga, banery i wiele więcej.
+      Wyróżnij się w internecie!
+    </p>
+
+    <a href="#portfolio" class="btn">
+      ZOBACZ PORTFOLIO →
+    </a>
+  </div>
+</div>
+
+<section id="portfolio">
+  <h2 class="section-title">
+    MOJE <span>PORTFOLIO</span>
+  </h2>
+
+  <p class="subtitle">
+    Przykładowe projekty GRAPHICSss.
+  </p>
+
+  <div class="portfolio">
+
+    <div class="project">
+      <div class="art">
+        100 DNI<br>NA HARDCORE
+      </div>
+      <div class="project-info">
+        <h3>Miniaturka YouTube</h3>
+        <p>Gaming / Minecraft</p>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="art purple">
+        GAMING<br>COMMUNITY
+      </div>
+      <div class="project-info">
+        <h3>Baner Discord</h3>
+        <p>Discord / Community</p>
+      </div>
+    </div>
+
+    <div class="project">
+      <div class="art blue">
+        G<span style="color:#ff5555">X</span>
+      </div>
+      <div class="project-info">
+        <h3>Logo gamingowe</h3>
+        <p>Logo / Branding</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="prices">
+  <h2 class="section-title">
+    MÓJ <span>CENNIK</span>
+  </h2>
+
+  <p class="subtitle">
+    Przystępne ceny na start.
+  </p>
+
+  <div class="prices">
+
+    <div class="price-card">
+      <h3>Miniaturka YouTube</h3>
+      <div class="price">10 zł</div>
+      <p>Indywidualny projekt<br>
+      Gamingowy styl<br>
+      Format HD</p>
+    </div>
+
+    <div class="price-card">
+      <h3>Baner Discord</h3>
+      <div class="price">15 zł</div>
+      <p>Autorski wygląd<br>
+      Dopasowane kolory<br>
+      Wysoka jakość</p>
+    </div>
+
+    <div class="price-card">
+      <h3>Logo profilowe</h3>
+      <div class="price">10 zł</div>
+      <p>Unikalny projekt<br>
+      Gamingowy klimat<br>
+      Plik PNG</p>
+    </div>
+
+    <div class="price-card">
+      <h3>Montaż TikTok</h3>
+      <div class="price">15 zł</div>
+      <p>Krótkie filmy<br>
+      Dynamiczne przejścia<br>
+      Napisy i efekty</p>
+    </div>
+
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <h2 class="section-title">
+    ZAMÓW <span>PROJEKT</span>
+  </h2>
+
+  <p>
+    Masz pomysł na grafikę? Napisz do mnie!
+  </p>
+
+  <a href="mailto:antonimuszalski2001@gmail.com?subject=Zamowienie%20GRAPHICSss"
+     class="btn">
+    NAPISZ DO MNIE →
+  </a>
+
+  <a class="email"
+     href="mailto:antonimuszalski2001@gmail.com">
+    antonimuszalski2001@gmail.com
+  </a>
+</section>
+
+</main>
+
+<footer>
+  © 2026 GRAPHICSss. Wszystkie prawa zastrzeżone.
+  <br><br>
+  YOUR VISION. OUR DESIGN.
+</footer>
+
+</body>
+</html>
